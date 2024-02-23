@@ -1,36 +1,51 @@
-//
-//  APIStatusMonitorTests.swift
-//  APIStatusMonitorTests
-//
-//  Created by Fidel Eduardo López Mayorga on 23/02/24.
-//
-
 import XCTest
 @testable import APIStatusMonitor
 
-final class APIStatusMonitorTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+class MainViewModelTests: XCTestCase {
+    
+    var viewModel: MainViewModel!
+    
+    override func setUp() {
+        super.setUp()
+        viewModel = MainViewModel()
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    override func tearDown() {
+        viewModel = nil
+        super.tearDown()
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    
+    func testLoadEndpoints() {
+        let mockEndpoints = [
+            Endpoint(name: "Service 1", url: "https://service1.com", isActive: true),
+            Endpoint(name: "Service 2", url: "https://service2.com", isActive: false)
+        ]
+        
+        let expectation = XCTestExpectation(description: "Endpoints loaded")
+        
+        let mockService = MockEndpointService(endpoints: mockEndpoints)
+        viewModel.endpointService = mockService
+        viewModel.loadEndpoints()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            XCTAssertEqual(self.viewModel.endpoints.count, mockEndpoints.count)
+            XCTAssertEqual(self.viewModel.endpoints[0].name, mockEndpoints[0].name)
+            XCTAssertEqual(self.viewModel.endpoints[1].name, mockEndpoints[1].name)
+            expectation.fulfill()
         }
+        
+        wait(for: [expectation], timeout: 2)
     }
 
+    
+    func testScheduleUpdate() {
+        let mockService = MockEndpointService()
+        viewModel.endpointService = mockService
+        viewModel.scheduleUpdate()
+        XCTAssertNotNil(viewModel.timer)
+    }
+    
+    func testScheduleNextUpdate() {
+        viewModel.scheduleNextUpdate()
+        XCTAssertFalse(viewModel.nextUpdate.isEmpty)
+    }
 }

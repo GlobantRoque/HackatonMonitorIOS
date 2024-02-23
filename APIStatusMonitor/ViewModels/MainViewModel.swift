@@ -13,8 +13,8 @@ class MainViewModel: ObservableObject {
     @Published var lastUpdated: String = ""
     @Published var nextUpdate: String = ""
 
-    private var endpointService = EndpointService()
-    private var timer: AnyCancellable?
+    var endpointService = EndpointService()
+    var timer: AnyCancellable?
 
     init() {
         scheduleUpdate()
@@ -30,7 +30,7 @@ class MainViewModel: ObservableObject {
         }
     }
 
-    private func scheduleUpdate() {
+    func scheduleUpdate() {
         let timeInterval = TimeInterval(Constants.updateInterval)
         timer = Timer.publish(every: timeInterval, on: .main, in: .common)
             .autoconnect()
@@ -39,7 +39,7 @@ class MainViewModel: ObservableObject {
             }
     }
 
-    private func scheduleNextUpdate() {
+    func scheduleNextUpdate() {
         let timeInterval = TimeInterval(Constants.updateInterval)
         let nextUpdateTime = Date().addingTimeInterval(timeInterval)
         nextUpdate = DateFormatter.localizedString(from: nextUpdateTime, dateStyle: .none, timeStyle: .short)

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B32B3F52B895091003C98D1 /* MockEndpointService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B32B3F42B895091003C98D1 /* MockEndpointService.swift */; };
 		70BC07CE2B891207003BB946 /* APIStatusMonitorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BC07CD2B891207003BB946 /* APIStatusMonitorApp.swift */; };
 		70BC07D02B891207003BB946 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BC07CF2B891207003BB946 /* MainView.swift */; };
 		70BC07D22B891208003BB946 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70BC07D12B891208003BB946 /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5B32B3F42B895091003C98D1 /* MockEndpointService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockEndpointService.swift; sourceTree = "<group>"; };
 		70BC07CA2B891207003BB946 /* APIStatusMonitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APIStatusMonitor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70BC07CD2B891207003BB946 /* APIStatusMonitorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIStatusMonitorApp.swift; sourceTree = "<group>"; };
 		70BC07CF2B891207003BB946 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				70BC07DE2B891208003BB946 /* APIStatusMonitorTests.swift */,
+				5B32B3F42B895091003C98D1 /* MockEndpointService.swift */,
 			);
 			path = APIStatusMonitorTests;
 			sourceTree = "<group>";
@@ -330,6 +333,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B32B3F52B895091003C98D1 /* MockEndpointService.swift in Sources */,
 				70BC07DF2B891208003BB946 /* APIStatusMonitorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -545,7 +549,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9Y2R6KEVSV;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.globant.APIStatusMonitorTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -565,7 +569,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9Y2R6KEVSV;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.globant.APIStatusMonitorTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
