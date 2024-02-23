@@ -8,12 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		70BC07CE2B891207003BB946 /* APIStatusMonitorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BC07CD2B891207003BB946 /* APIStatusMonitorApp.swift */; };
-		70BC07D02B891207003BB946 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BC07CF2B891207003BB946 /* ContentView.swift */; };
+		70BC07D02B891207003BB946 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BC07CF2B891207003BB946 /* MainView.swift */; };
 		70BC07D22B891208003BB946 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70BC07D12B891208003BB946 /* Assets.xcassets */; };
 		70BC07D52B891208003BB946 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70BC07D42B891208003BB946 /* Preview Assets.xcassets */; };
 		70BC07DF2B891208003BB946 /* APIStatusMonitorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BC07DE2B891208003BB946 /* APIStatusMonitorTests.swift */; };
 		70BC07E92B891208003BB946 /* APIStatusMonitorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BC07E82B891208003BB946 /* APIStatusMonitorUITests.swift */; };
 		70BC07EB2B891208003BB946 /* APIStatusMonitorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BC07EA2B891208003BB946 /* APIStatusMonitorUITestsLaunchTests.swift */; };
+		70BC07FE2B8916F8003BB946 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BC07FD2B8916F8003BB946 /* Endpoint.swift */; };
+		70BC08002B8917BE003BB946 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BC07FF2B8917BE003BB946 /* MainViewModel.swift */; };
+		70BC08022B8917D8003BB946 /* EndpointService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BC08012B8917D8003BB946 /* EndpointService.swift */; };
+		70BC08042B891803003BB946 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BC08032B891803003BB946 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +40,7 @@
 /* Begin PBXFileReference section */
 		70BC07CA2B891207003BB946 /* APIStatusMonitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APIStatusMonitor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70BC07CD2B891207003BB946 /* APIStatusMonitorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIStatusMonitorApp.swift; sourceTree = "<group>"; };
-		70BC07CF2B891207003BB946 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		70BC07CF2B891207003BB946 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		70BC07D12B891208003BB946 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		70BC07D42B891208003BB946 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		70BC07DA2B891208003BB946 /* APIStatusMonitorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = APIStatusMonitorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +48,10 @@
 		70BC07E42B891208003BB946 /* APIStatusMonitorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = APIStatusMonitorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		70BC07E82B891208003BB946 /* APIStatusMonitorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIStatusMonitorUITests.swift; sourceTree = "<group>"; };
 		70BC07EA2B891208003BB946 /* APIStatusMonitorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIStatusMonitorUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		70BC07FD2B8916F8003BB946 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		70BC07FF2B8917BE003BB946 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		70BC08012B8917D8003BB946 /* EndpointService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointService.swift; sourceTree = "<group>"; };
+		70BC08032B891803003BB946 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,9 +103,14 @@
 			isa = PBXGroup;
 			children = (
 				70BC07CD2B891207003BB946 /* APIStatusMonitorApp.swift */,
-				70BC07CF2B891207003BB946 /* ContentView.swift */,
 				70BC07D12B891208003BB946 /* Assets.xcassets */,
+				70BC07FC2B891527003BB946 /* Constants */,
+				70BC07F72B89148E003BB946 /* Models */,
+				70BC07FB2B8914C1003BB946 /* Network */,
 				70BC07D32B891208003BB946 /* Preview Content */,
+				70BC07FA2B8914BC003BB946 /* Services */,
+				70BC07F92B8914A1003BB946 /* ViewModels */,
+				70BC07F82B891494003BB946 /* Views */,
 			);
 			path = APIStatusMonitor;
 			sourceTree = "<group>";
@@ -125,6 +138,53 @@
 				70BC07EA2B891208003BB946 /* APIStatusMonitorUITestsLaunchTests.swift */,
 			);
 			path = APIStatusMonitorUITests;
+			sourceTree = "<group>";
+		};
+		70BC07F72B89148E003BB946 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				70BC07FD2B8916F8003BB946 /* Endpoint.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		70BC07F82B891494003BB946 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				70BC07CF2B891207003BB946 /* MainView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		70BC07F92B8914A1003BB946 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				70BC07FF2B8917BE003BB946 /* MainViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		70BC07FA2B8914BC003BB946 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				70BC08012B8917D8003BB946 /* EndpointService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		70BC07FB2B8914C1003BB946 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		70BC07FC2B891527003BB946 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				70BC08032B891803003BB946 /* Constants.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +317,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				70BC07D02B891207003BB946 /* ContentView.swift in Sources */,
+				70BC07D02B891207003BB946 /* MainView.swift in Sources */,
+				70BC07FE2B8916F8003BB946 /* Endpoint.swift in Sources */,
 				70BC07CE2B891207003BB946 /* APIStatusMonitorApp.swift in Sources */,
+				70BC08022B8917D8003BB946 /* EndpointService.swift in Sources */,
+				70BC08002B8917BE003BB946 /* MainViewModel.swift in Sources */,
+				70BC08042B891803003BB946 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
